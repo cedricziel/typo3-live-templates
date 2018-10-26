@@ -1,10 +1,11 @@
-<templateSet group="typo3">
-  <template name="querybuilder" value="$form = $this-&gt;createForm($CLASSNAME$::class);&#10;&#10;$form-&gt;handleRequest($request);&#10;if ($form-&gt;isSubmitted() &amp;&amp; $form-&gt;isValid()) {&#10;    // todo - do some work, like saving stuff&#10;&#10;    $this-&gt;addFlash('success', '$SUCCESSMESSAGE$');&#10;&#10;    return $this-&gt;redirectToRoute('$ROUTENAME$', []);&#10;}" description="Adds controller form-handling code" toReformat="true" toShortenFQNames="true">
-    <variable name="CLASSNAME" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="SUCCESSMESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="ROUTENAME" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="PHP" value="true" />
-    </context>
-  </template>
+<?xml version="1.0" encoding="UTF-8"?>
+<templateSet group="TYPO3-Persistence">
+    <template name="querybuilder"
+              value="$qb = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable('$TABLENAME$');$END$"
+              description="Create a TYPO3 CMS QueryBuilder for a given table" toReformat="true" toShortenFQNames="true">
+        <variable name="TABLENAME" expression="" defaultValue="tt_content" alwaysStopAt="true"/>
+        <context>
+            <option name="PHP" value="true"/>
+        </context>
+    </template>
 </templateSet>
