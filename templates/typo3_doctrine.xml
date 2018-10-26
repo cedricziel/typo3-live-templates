@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templateSet group="TYPO3-Persistence">
     <template name="querybuilder"
-              value="$qb = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable('$TABLENAME$');$END$"
+              value="$qb = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)-&gt;getQueryBuilderForTable('$TABLENAME$');$END$"
               description="Create a TYPO3 CMS QueryBuilder for a given table" toReformat="true" toShortenFQNames="true">
         <variable name="TABLENAME" expression="" defaultValue="tt_content" alwaysStopAt="true"/>
         <context>
